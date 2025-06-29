@@ -1,0 +1,23 @@
+{
+  "name": "modern-website-project",
+  "version": "1.0.0",
+  "description": "A modern, professional website with organized frontend and backend structure",
+  "main": "frontend/index.html",
+  "scripts": {
+    "start": "cd frontend && python -m http.server 8000",
+    "dev": "cd frontend && python -m http.server 8000",
+    "build": "echo 'Build process would go here'",
+    "test": "echo 'Test process would go here'"
+  },
+  "keywords": [
+    "website",
+    "frontend",
+    "backend",
+    "modern",
+    "professional"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+} 

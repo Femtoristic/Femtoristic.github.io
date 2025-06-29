@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Website - Professional Design</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- REMOVE background and particle elements -->
+    <!-- <div class="floating-particles"></div> -->
+    <!-- <div class="planet-1"></div> -->
+    <!-- <div class="planet-2"></div> -->
+    <!-- <div class="planet-3"></div> -->
+    <!-- <div class="asteroid-belt"></div> -->
+    <!-- <div class="particles">...</div> -->
+    <!-- <div class="interactive-dots"></div> -->
+    <!-- <div class="cursor-trail" id="cursorTrail"></div> -->
+    <!-- <div class="scroll-progress" id="scrollProgress"></div> -->
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <!-- Minimal AI-inspired SVG logo -->
+                <svg id="headerLogo" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;cursor:pointer;">
+                    <rect x="3" y="3" width="30" height="30" rx="8" fill="#fff" fill-opacity="0.06"/>
+                    <path d="M12 24L18 12L24 24" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="18" cy="27" r="1.5" fill="#fff"/>
+                </svg>
+            </div>
+            <!-- Minimal Desktop Navigation -->
+            <nav class="nav desktop-nav minimal-nav">
+                <a href="#services" class="nav-link" data-i18n="header.nav.0">LEISTUNGEN</a>
+                <a href="#portfolio" class="nav-link" data-i18n="header.nav.1">PORTFOLIO</a>
+                <a href="#testimonials" class="nav-link" data-i18n="header.nav.2">REFERENZEN</a>
+                <a href="#blog" class="nav-link" data-i18n="header.nav.3">BLOG</a>
+                <a href="#resources" class="nav-link" data-i18n="header.nav.4">RESSOURCEN</a>
+            </nav>
+            <!-- Minimal Controls: Language and Style Switchers -->
+            <div class="minimal-controls">
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="de" data-i18n="header.lang.0">
+                        <span class="flag">🇩🇪</span>
+                        <span class="lang-text">DE</span>
+                    </button>
+                    <button class="lang-btn" data-lang="en" data-i18n="header.lang.1">
+                        <span class="flag">🇺🇸</span>
+                        <span class="lang-text">EN</span>
+                    </button>
+                </div>
+                <div class="style-switcher-simple">
+                    <button class="theme-btn active" data-theme="modern" title="Modern Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="theme-btn" data-theme="minimalist" title="Minimalist Theme">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button class="theme-btn" data-theme="nature" title="Nature Theme">
+                        <i class="fas fa-leaf"></i>
+                    </button>
+                    <button class="theme-btn" data-theme="corporate" title="Corporate Theme">
+                        <i class="fas fa-briefcase"></i>
+                    </button>
+                    <button class="theme-btn" data-theme="creative" title="Creative Theme">
+                        <i class="fas fa-paint-brush"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <!-- Mobile Navigation Overlay -->
+            <div class="mobile-nav-overlay" id="mobileNavOverlay">
+                <nav class="mobile-nav">
+                    <div class="mobile-nav-header">
+                        <h3>Navigation</h3>
+                        <button class="mobile-close" id="mobileClose">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="mobile-nav-items">
+                        <button class="mobile-nav-btn active" data-section="services">
+                            <span data-i18n="header.nav.0">Leistungen</span>
+                        </button>
+                        <button class="mobile-nav-btn" data-section="portfolio">
+                            <span data-i18n="header.nav.1">Portfolio</span>
+                        </button>
+                        <button class="mobile-nav-btn" data-section="testimonials">
+                            <span data-i18n="header.nav.2">Referenzen</span>
+                        </button>
+                        <button class="mobile-nav-btn" data-section="blog">
+                            <span data-i18n="header.nav.3">Blog</span>
+                        </button>
+                        <button class="mobile-nav-btn" data-section="resources">
+                            <span data-i18n="header.nav.4">Ressourcen</span>
+                        </button>
+                    </div>
+                    <div class="mobile-controls">
+                        <div class="mobile-language-switcher">
+                            <span>Sprache:</span>
+                            <div class="mobile-lang-buttons">
+                                <button class="mobile-lang-btn active" data-lang="de">
+                                    <span class="flag">🇩🇪</span>
+                                    <span>DE</span>
+                                </button>
+                                <button class="mobile-lang-btn" data-lang="en">
+                                    <span class="flag">🇺🇸</span>
+                                    <span>EN</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mobile-theme-switcher">
+                            <span>Theme:</span>
+                            <div class="mobile-theme-buttons">
+                                <button class="mobile-theme-btn active" data-theme="modern">Modern</button>
+                                <button class="mobile-theme-btn" data-theme="minimalist">Minimal</button>
+                                <button class="mobile-theme-btn" data-theme="nature">Nature</button>
+                                <button class="mobile-theme-btn" data-theme="corporate">Corporate</button>
+                                <button class="mobile-theme-btn" data-theme="creative">Creative</button>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title animated-text" data-i18n="hero.title">Imagine. Create. Elevate.</h1>
+                    <p class="hero-description fade-in" data-i18n="hero.desc">
+                        Willkommen bei IhrBrand - wo Innovation auf Qualität trifft. Wir sind spezialisiert auf die Bereitstellung außergewöhnlicher Ergebnisse 
+                        durch unser umfassendes Angebot an professionellen Dienstleistungen und Lösungen.
+                    </p>
+                    <div class="hero-actions fade-in">
+                        <button class="btn btn-primary glow-border" id="contactBtn" data-i18n="hero.cta1">Jetzt Starten</button>
+                        <button class="btn btn-secondary glow-border" id="projectsBtn" data-i18n="hero.cta2">Projekte entdecken</button>
+                    </div>
+                </div>
+                <div class="hero-image slide-in-right">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=80" alt="Creative professional workspace">
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title animated-text" data-i18n="services.title">Unsere Leistungen</h2>
+                    <p class="section-subtitle fade-in" data-i18n="services.subtitle">Umfassende Lösungen, die auf Ihre Bedürfnisse zugeschnitten sind</p>
+                </div>
+                <div class="platforms-grid">
+                    <div class="platform-card holographic scale-in">
+                        <div class="platform-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 data-i18n="services.items.0.title">Webdesign & UI/UX</h3>
+                        <p data-i18n="services.items.0.desc">Moderner, nutzerzentrierter Webauftritt für Ihre Marke. Ich gestalte ansprechende, intuitive und responsive Websites, die Ihre Besucher begeistern.</p>
+                        <button class="btn btn-primary" data-i18n="services.items.0.btn">Jetzt starten</button>
+                    </div>
+                    <div class="platform-card holographic scale-in">
+                        <div class="platform-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 data-i18n="services.items.1.title">Prototyping & Konzepte</h3>
+                        <p data-i18n="services.items.1.desc">Von der ersten Idee bis zum fertigen Konzept: Ich entwerfe Wireframes und interaktive Prototypen, damit Sie Ihre Website schon vor dem Launch erleben können.</p>
+                        <button class="btn btn-secondary" data-i18n="services.items.1.btn">Design anfragen</button>
+                    </div>
+                    <div class="platform-card holographic scale-in">
+                        <div class="platform-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 data-i18n="services.items.2.title">Redesign & Optimierung</h3>
+                        <p data-i18n="services.items.2.desc">Ihre Website braucht einen neuen Look? Ich modernisiere und optimiere bestehende Seiten für bessere Usability, mobile Nutzung und ein zeitgemäßes Erscheinungsbild.</p>
+                        <button class="btn btn-accent" data-i18n="services.items.2.btn">Redesign entdecken</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="portfolio.title">Ausgewählte Projekte</h2>
+                    <p class="section-subtitle" data-i18n="portfolio.subtitle">Präsentation unserer besten Arbeiten und erfolgreichen Kooperationen</p>
+                </div>
+                
+                <!-- Featured Project -->
+                <div class="featured-product">
+                    <div class="product-showcase">
+                        <div class="product-info">
+                            <h3 data-i18n="portfolio.featured.title">Projekt Exzellenz 2024</h3>
+                            <p class="product-description" data-i18n="portfolio.featured.desc">Ein umfassendes Digital-Transformationsprojekt, das die Online-Präsenz unseres Kunden revolutioniert hat. Dieses Projekt demonstriert unsere Expertise in Design, Entwicklung und strategischem Denken.</p>
+                            <div class="product-specs">
+                                <div class="spec" data-i18n="portfolio.featured.specs.0"><i class="fas fa-palette"></i><span>Individuelles Design-System</span></div>
+                                <div class="spec" data-i18n="portfolio.featured.specs.1"><i class="fas fa-mobile-alt"></i><span>Responsive Entwicklung</span></div>
+                                <div class="spec" data-i18n="portfolio.featured.specs.2"><i class="fas fa-rocket"></i><span>Performance-Optimierung</span></div>
+                                <div class="spec" data-i18n="portfolio.featured.specs.3"><i class="fas fa-chart-line"></i><span>Analytics-Integration</span></div>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary" data-i18n="portfolio.featured.btn1">Projekt ansehen</button>
+                                <button class="btn btn-secondary" data-i18n="portfolio.featured.btn2">Fallstudie</button>
+                            </div>
+                        </div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Projekt-Präsentation">
+                            <div class="price-badge">
+                                <span class="price">Ausgewählt</span>
+                                <span class="discount">2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Grid -->
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Web-Design">
+                        </div>
+                        <div class="product-content">
+                            <h4 data-i18n="portfolio.items.0.title">E-Commerce-Plattform</h4>
+                            <p data-i18n="portfolio.items.0.desc">Moderner Online-Shop mit erweiterten Funktionen</p>
+                            <div class="product-price" data-i18n="portfolio.items.0.tag">Web-Design</div>
+                            <button class="btn btn-primary" data-i18n="portfolio.items.0.btn">Details ansehen</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Branding">
+                        </div>
+                        <div class="product-content">
+                            <h4 data-i18n="portfolio.items.1.title">Markenidentität</h4>
+                            <p data-i18n="portfolio.items.1.desc">Komplettes Marken-Redesign und Strategie</p>
+                            <div class="product-price" data-i18n="portfolio.items.1.tag">Branding</div>
+                            <button class="btn btn-primary" data-i18n="portfolio.items.1.btn">Details ansehen</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Marketing">
+                        </div>
+                        <div class="product-content">
+                            <h4 data-i18n="portfolio.items.2.title">Digitale Kampagne</h4>
+                            <p data-i18n="portfolio.items.2.desc">Multi-Channel-Marketing-Kampagne</p>
+                            <div class="product-price" data-i18n="portfolio.items.2.tag">Marketing</div>
+                            <button class="btn btn-primary" data-i18n="portfolio.items.2.btn">Details ansehen</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Carousel Section -->
+        <section id="testimonials" class="testimonials-carousel">
+          <div class="testimonial-list">
+            <div class="testimonial">
+              <p data-i18n="testimonials.items.0.quote">"Dieser Service hat meine Erwartungen übertroffen!"</p>
+              <h4 data-i18n="testimonials.items.0.name">- Anna S.</h4>
+            </div>
+            <div class="testimonial">
+              <p data-i18n="testimonials.items.1.quote">"Professionell, schnell und zuverlässig. Sehr empfehlenswert."</p>
+              <h4 data-i18n="testimonials.items.1.name">- Markus W.</h4>
+            </div>
+            <div class="testimonial">
+              <p data-i18n="testimonials.items.2.quote">"Die Zusammenarbeit war angenehm und das Ergebnis hervorragend."</p>
+              <h4 data-i18n="testimonials.items.2.name">- Laura K.</h4>
+            </div>
+          </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="blog.title">Neueste Erkenntnisse und Trends</h2>
+                    <p class="section-subtitle" data-i18n="blog.subtitle">Bleiben Sie auf dem Laufenden mit Branchennachrichten und Expertenperspektiven</p>
+                </div>
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Design-Trends">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category" data-i18n="blog.items.0.category">Design</span>
+                            <h3 data-i18n="blog.items.0.title">Design-Trends für 2024</h3>
+                            <p data-i18n="blog.items.0.desc">Entdecken Sie die neuesten Design-Trends, die die digitale Landschaft prägen. Von minimalistischen Ästhetiken bis hin zu mutiger Typografie - entdecken Sie, was Innovation antreibt.</p>
+                            <div class="blog-meta">
+                                <span data-i18n="blog.items.0.date"><i class="fas fa-calendar"></i> 15. März 2024</span>
+                                <span data-i18n="blog.items.0.author"><i class="fas fa-user"></i> Design-Team</span>
+                            </div>
+                            <button class="btn btn-text" data-i18n="blog.items.0.btn">Weiterlesen <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </article>
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Geschäftsstrategie">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category" data-i18n="blog.items.1.category">Strategie</span>
+                            <h3 data-i18n="blog.items.1.title">Digitale Transformationsstrategien</h3>
+                            <p data-i18n="blog.items.1.desc">Erfahren Sie, wie Unternehmen sich an das digitale Zeitalter anpassen und effektive Transformationsstrategien implementieren, um wettbewerbsfähig zu bleiben.</p>
+                            <div class="blog-meta">
+                                <span data-i18n="blog.items.1.date"><i class="fas fa-calendar"></i> 12. März 2024</span>
+                                <span data-i18n="blog.items.1.author"><i class="fas fa-user"></i> Strategie-Team</span>
+                            </div>
+                            <button class="btn btn-text" data-i18n="blog.items.1.btn">Weiterlesen <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </article>
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Marketing">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category" data-i18n="blog.items.2.category">Marketing</span>
+                            <h3 data-i18n="blog.items.2.title">Effektives Digital-Marketing</h3>
+                            <p data-i18n="blog.items.2.desc">Entdecken Sie bewährte Strategien für erfolgreiches Digital-Marketing. Von Content-Marketing bis Social Media - lernen Sie, wie Sie Ihre Zielgruppe effektiv erreichen.</p>
+                            <div class="blog-meta">
+                                <span data-i18n="blog.items.2.date"><i class="fas fa-calendar"></i> 10. März 2024</span>
+                                <span data-i18n="blog.items.2.author"><i class="fas fa-user"></i> Marketing-Team</span>
+                            </div>
+                            <button class="btn btn-text" data-i18n="blog.items.2.btn">Weiterlesen <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="resources.title">Hilfreiche Ressourcen und Tools</h2>
+                    <p class="section-subtitle" data-i18n="resources.subtitle">Alles, was Sie für den Erfolg mit unseren Dienstleistungen benötigen</p>
+                </div>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 data-i18n="resources.items.0.title">Dokumentation</h3>
+                        <p data-i18n="resources.items.0.desc">Umfassende Anleitungen und Dokumentation für alle unsere Dienstleistungen und Lösungen.</p>
+                        <ul class="resource-features">
+                            <li data-i18n="resources.items.0.features.0">Schritt-für-Schritt-Anleitungen</li>
+                            <li data-i18n="resources.items.0.features.1">Best Practices</li>
+                            <li data-i18n="resources.items.0.features.2">Code-Beispiele</li>
+                        </ul>
+                        <button class="btn btn-primary" data-i18n="resources.items.0.btn">Zugreifen</button>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 data-i18n="resources.items.1.title">Video-Tutorials</h3>
+                        <p data-i18n="resources.items.1.desc">Schritt-für-Schritt-Videoanleitungen für alle unsere Dienstleistungen. Von Anfänger bis Experte.</p>
+                        <ul class="resource-features">
+                            <li data-i18n="resources.items.1.features.0">200+ Video-Tutorials</li>
+                            <li data-i18n="resources.items.1.features.1">HD-Qualitätsinhalte</li>
+                            <li data-i18n="resources.items.1.features.2">Interaktive Übungen</li>
+                        </ul>
+                        <button class="btn btn-secondary" data-i18n="resources.items.1.btn">Ansehen</button>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h3 data-i18n="resources.items.2.title">Kostenlose Ressourcen</h3>
+                        <p data-i18n="resources.items.2.desc">Vorlagen, Tools und Ressourcen zum Download. Immer die neuesten Versionen.</p>
+                        <ul class="resource-features">
+                            <li data-i18n="resources.items.2.features.0">Design-Vorlagen</li>
+                            <li data-i18n="resources.items.2.features.1">Entwicklungstools</li>
+                            <li data-i18n="resources.items.2.features.2">Marketing-Ressourcen</li>
+                        </ul>
+                        <button class="btn btn-accent" data-i18n="resources.items.2.btn">Herunterladen</button>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 data-i18n="resources.items.3.title">Support</h3>
+                        <p data-i18n="resources.items.3.desc">24/7-Kundensupport und Live-Chat. Unser Expertenteam ist hier, um Ihnen zum Erfolg zu verhelfen.</p>
+                        <ul class="resource-features">
+                            <li data-i18n="resources.items.3.features.0">Live-Chat-Support</li>
+                            <li data-i18n="resources.items.3.features.1">Ticket-System</li>
+                            <li data-i18n="resources.items.3.features.2">Remote-Unterstützung</li>
+                        </ul>
+                        <button class="btn btn-primary" data-i18n="resources.items.3.btn">Kontakt</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Professional Footer -->
+    <footer class="footer">
+        <div class="container">
+            <!-- Main Footer Content -->
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3 data-i18n="footer.description">IhrBrand ist Ihr Partner für kreatives Design, Webentwicklung und digitales Marketing. Seit 2018 unterstützen wir Unternehmen und Selbstständige dabei, ihre Ziele mit innovativen Lösungen zu erreichen.</h3>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4 data-i18n="footer.quickLinks">Schnelllinks</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services" data-i18n="footer.links.services">Leistungen</a></li>
+                        <li><a href="#portfolio" data-i18n="footer.links.portfolio">Portfolio</a></li>
+                        <li><a href="#testimonials" data-i18n="footer.links.testimonials">Referenzen</a></li>
+                        <li><a href="#blog" data-i18n="footer.links.blog">Blog</a></li>
+                        <li><a href="#resources" data-i18n="footer.links.resources">Ressourcen</a></li>
+                        <li><a href="#careers" data-i18n="footer.links.careers">Karriere</a></li>
+                    </ul>
+                    <div class="footer-socials">
+                        <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-section">
+                    <h4 data-i18n="footer.services">Dienstleistungen</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" data-i18n="footer.servicesLinks.web">Web-Design</a></li>
+                        <li><a href="#" data-i18n="footer.servicesLinks.brand">Markenidentität</a></li>
+                        <li><a href="#" data-i18n="footer.servicesLinks.marketing">Digital-Marketing</a></li>
+                        <li><a href="#" data-i18n="footer.servicesLinks.ecommerce">E-Commerce</a></li>
+                        <li><a href="#" data-i18n="footer.servicesLinks.consulting">Beratung</a></li>
+                        <li><a href="#" data-i18n="footer.servicesLinks.support">Support</a></li>
+                    </ul>
+                    <div class="footer-socials">
+                        <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Support -->
+                <div class="footer-section">
+                    <h4 data-i18n="footer.support">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" data-i18n="footer.supportLinks.help">Hilfecenter</a></li>
+                        <li><a href="#" data-i18n="footer.supportLinks.docs">Dokumentation</a></li>
+                        <li><a href="#" data-i18n="footer.supportLinks.tutorials">Tutorials</a></li>
+                        <li><a href="#" data-i18n="footer.supportLinks.community">Community</a></li>
+                        <li><a href="#" data-i18n="footer.supportLinks.status">Status</a></li>
+                        <li><a href="#" data-i18n="footer.supportLinks.contact">Kontakt</a></li>
+                    </ul>
+                    <div class="footer-socials">
+                        <a href="#" class="social-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="footer-section">
+                    <h4 data-i18n="footer.contact">Kontaktieren Sie uns</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong data-i18n="footer.contactInfo.office">Büro</strong>
+                                <p data-i18n="footer.contactInfo.address">IhrBrand Studio<br>Innovation Street 42<br>10115 Berlin, Deutschland</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong data-i18n="footer.contactInfo.phone">Telefon</strong>
+                                <p data-i18n="footer.contactInfo.phoneNumber">+49 (0) 30 1234 5678</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong data-i18n="footer.contactInfo.email">E-Mail</strong>
+                                <p data-i18n="footer.contactInfo.emailAddress">hallo@ihrbrand.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong data-i18n="footer.contactInfo.hours">Geschäftszeiten</strong>
+                                <p data-i18n="footer.contactInfo.hoursText">Mo-Fr: 9:00 - 18:00<br>Sa: 10:00 - 16:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter Subscription -->
+            <div class="newsletter-section">
+                <div class="newsletter-content">
+                    <h4 data-i18n="footer.newsletter.title">Bleiben Sie informiert</h4>
+                    <p data-i18n="footer.newsletter.desc">Abonnieren Sie unseren Newsletter für die neuesten Erkenntnisse und Unternehmensupdates.</p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" data-i18n="footer.newsletter.input" placeholder="Geben Sie Ihre E-Mail-Adresse ein" required>
+                            <button type="submit" class="btn btn-primary" data-i18n="footer.newsletter.btn">
+                                <i class="fas fa-paper-plane"></i>
+                                Abonnieren
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p data-i18n="footer.copyright">&copy; 2024 IhrBrand. Alle Rechte vorbehalten.</p>
+                    </div>
+                    <div class="legal-links">
+                        <a href="#" data-legal="privacy" data-i18n="footer.legal.privacy">Datenschutzerklärung</a>
+                        <a href="#" data-legal="terms" data-i18n="footer.legal.terms">Nutzungsbedingungen</a>
+                        <a href="#" data-legal="cookies" data-i18n="footer.legal.cookies">Cookie-Richtlinie</a>
+                        <a href="#" data-legal="imprint" data-i18n="footer.legal.imprint">Impressum</a>
+                        <a href="#" data-legal="agb" data-i18n="footer.legal.agb">AGB</a>
+                        <a href="#" data-legal="gdpr" data-i18n="footer.legal.gdpr">DSGVO</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Website Overlay (blocks content until cookies accepted) -->
+    <div id="website-overlay" class="website-overlay">
+        <div class="overlay-content">
+            <div class="overlay-logo">
+                <h1>IhrBrand</h1>
+                <p>Exzellenz in jedem Detail</p>
+            </div>
+            <div class="overlay-message">
+                <i class="fas fa-shield-alt"></i>
+                <h2>Willkommen bei IhrBrand</h2>
+                <p>Bitte akzeptieren Sie unsere Cookie-Einstellungen, um fortzufahren.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Legal Modal -->
+    <div id="legal-modal" class="legal-modal">
+        <div class="legal-content">
+            <div class="legal-header">
+                <h2 id="legal-title">Rechtliche Informationen</h2>
+                <button class="legal-close">&times;</button>
+            </div>
+            <div class="legal-body" id="legal-content">
+                <!-- Legal content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Kontakt-Modal -->
+    <div id="contactModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" id="closeContactModal">&times;</button>
+            <h2>Kontakt aufnehmen</h2>
+            <p>Bitte beachte: Dies ist kein Kauf und kein Newsletter. Mit dem Absenden des Formulars nimmst du Kontakt zu mir auf.</p>
+            <form id="contactForm">
+                <label for="contactName">Name (optional)</label>
+                <input type="text" id="contactName" name="name" placeholder="Dein Name">
+                <label for="contactEmail">E-Mail-Adresse*</label>
+                <input type="email" id="contactEmail" name="email" required placeholder="dein@email.de">
+                <label for="contactMessage">Nachricht*</label>
+                <textarea id="contactMessage" name="message" required placeholder="Deine Nachricht"></textarea>
+                <label class="checkbox">
+                    <input type="checkbox" id="contactPrivacy" required>
+                    Ich akzeptiere die <a href="#">Datenschutzerklärung</a>.
+                </label>
+                <button type="submit" class="btn btn-primary">Absenden</button>
+            </form>
+            <p class="privacy-hint">
+                Deine Daten werden nur zur Bearbeitung deiner Anfrage verwendet. Weitere Infos findest du in der <a href="#">Datenschutzerklärung</a>.
+            </p>
+        </div>
+    </div>
+
+    <!-- Projekte entdecken Modal -->
+    <div id="projectsModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" id="closeProjectsModal">&times;</button>
+            <h2>Projektbeispiele</h2>
+            <p>
+                Hier können Unternehmen ihre erfolgreich abgeschlossenen Projekte, Referenzen oder Fallstudien präsentieren.<br>
+                <em>Nutzen Sie diesen Bereich, um potenziellen Kunden Ihre Arbeit und Kompetenzen zu zeigen.</em>
+            </p>
+            <div class="project-example">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Projektbeispiel" style="width:100%;border-radius:12px;margin-bottom:1rem;">
+                <div style="font-size:0.95rem;color:#888;">
+                    <strong>Beispiel:</strong> Hier könnte ein Screenshot, ein Mockup oder ein Foto Ihres Projekts stehen.
+                </div>
+            </div>
+            <p class="privacy-hint" style="margin-top:1.5rem;">
+                <em>Sie haben noch keine Projekte? Kein Problem – fügen Sie später einfach Ihre eigenen Referenzen hinzu!</em>
+            </p>
+        </div>
+    </div>
+
+    <script src="js/components/testimonials-carousel-new.js"></script>
+    <script src="js/utils/translations.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/components/theme-switcher.js"></script>
+    <script src="js/components/back-to-top.js"></script>
+    <script src="js/components/contact-modal.js"></script>
+    <script src="js/components/projects-modal.js"></script>
+    <script src="js/components/particles.js"></script>
+    <script src="js/components/mobile-menu.js"></script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-header">
+                <h3><i class="fas fa-cookie-bite"></i> Cookie-Einstellungen</h3>
+            </div>
+            <div class="cookie-body">
+                <p>Wir verwenden Cookies und ähnliche Technologien, um Ihnen das beste Nutzererlebnis zu bieten. Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu.</p>
+                <div class="cookie-options">
+                    <label class="cookie-option">
+                        <input type="checkbox" checked disabled>
+                        <span>Notwendige Cookies (immer aktiv)</span>
+                    </label>
+                    <label class="cookie-option">
+                        <input type="checkbox" id="analytics-cookies">
+                        <span>Analyse-Cookies (zur Verbesserung der Website)</span>
+                    </label>
+                    <label class="cookie-option">
+                        <input type="checkbox" id="marketing-cookies">
+                        <span>Marketing-Cookies (für personalisierte Inhalte)</span>
+                    </label>
+                </div>
+            </div>
+            <div class="cookie-actions">
+                <button class="btn btn-secondary" id="cookie-settings">Einstellungen</button>
+                <button class="btn btn-primary" id="accept-all-cookies">Alle akzeptieren</button>
+            </div>
+            <div class="cookie-links">
+                <a href="#" data-legal="privacy">Datenschutzerklärung</a>
+                <a href="#" data-legal="cookies">Cookie-Richtlinie</a>
+                <a href="#" data-legal="agb">Nutzungsbedingungen</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
